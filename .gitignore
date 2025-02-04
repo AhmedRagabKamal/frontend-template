@@ -30,6 +30,9 @@ dist
 # Storybook
 *storybook.log
 
+# Changesets
+.changeset/*.md
+!.changeset/config.json
 
 # Debug
 npm-debug.log*
