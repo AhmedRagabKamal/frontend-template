@@ -1,0 +1,10 @@
+{
+  "extends": "@frontend-template/typescript-config/react",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [".storybook/**/*.ts", "**/*.ts", "**/*.tsx"]
+}
