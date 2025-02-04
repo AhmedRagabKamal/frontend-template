@@ -22,7 +22,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --write .",
-      "prettier --check ."
+      "prettier --check .",
+      "eslint --fix --max-warnings=0 --report-unused-disable-directives"
     ],
     "*.{json,md,mdx,css,scss}": [
       "prettier --write .",
