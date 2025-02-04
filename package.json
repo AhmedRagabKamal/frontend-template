@@ -14,13 +14,32 @@
     "cleandep": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo build --filter=@frontend-template/* && changeset publish"
+    "release": "turbo build --filter=@frontend-template/* && changeset publish",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,mdx,css,scss,json}": [
+      "prettier --write --ignore-unknown --loglevel warn"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix --max-warnings=0 --report-unused-disable-directives",
+      "bash -c 'turbo run typecheck --filter=./$(dirname {})'"
+    ],
+    "**/*.stories.{ts,tsx}": [
+      "turbo run test:stories --filter=./$(dirname {})"
+    ]
   },
   "devDependencies": {
     "@changesets/cli": "2.27.12",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "eslint": "^9.19.0",
     "globals": "^15.14.0",
+    "husky": "latest",
+    "lint-staged": "latest",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.4.0",
@@ -29,5 +48,8 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
   }
 }
