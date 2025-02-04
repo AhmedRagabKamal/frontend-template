@@ -1,12 +1,4 @@
-# Only run in changed workspaces
-# CHANGED_WORKSPACES=$(git diff --name-only --cached | awk -F'/' '{ print $2 }' | uniq | xargs -I{} echo --filter={})
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-# if [ -n "$CHANGED_WORKSPACES" ]; then
-#   pnpm exec lint-staged --concurrent 4 --relative \
-#     --diff "git diff --staged --name-only --relative" \
-#     --diff-filter "ACMR" \
-#     --verbose \
-#     $CHANGED_WORKSPACES
-# fi
-
-pnpm lint-staged
+pnpm lint-staged --no-stash --concurrent false

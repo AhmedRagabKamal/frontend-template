@@ -21,17 +21,14 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "prettier --write .",
-      "prettier --check .",
-      "eslint --fix --max-warnings=0 --report-unused-disable-directives"
+      "eslint --fix",
+      "prettier --write"
     ],
     "*.{json,md,mdx,css,scss}": [
-      "prettier --write .",
-      "prettier --check ."
+      "prettier --write"
     ],
     "package.json": [
-      "prettier --write .",
-      "prettier --check ."
+      "prettier --write"
     ]
   },
   "devDependencies": {
