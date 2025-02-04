@@ -47,6 +47,9 @@ importers:
 
   apps/next-app:
     dependencies:
+      '@frontend-template/ui-core':
+        specifier: workspace:*
+        version: link:../../packages/ui-core
       next:
         specifier: 15.1.6
         version: 15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -60,6 +63,12 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3
         version: 3.2.0
+      '@frontend-template/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@frontend-template/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
       '@types/node':
         specifier: ^20
         version: 20.17.17
