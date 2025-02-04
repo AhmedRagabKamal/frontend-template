@@ -29,9 +29,5 @@ export function Headline({
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const Element: keyof JSX.IntrinsicElements = variant ?? 'h1';
 
-  return (
-    <Element className={cn(variants({ className, variant }))}>
-      {children}
-    </Element>
-  );
+  return <Element className={cn(variants({ className, variant }))}>{children}</Element>;
 }

@@ -20,9 +20,7 @@ describe('variant', () => {
   });
 
   it('should render destructive variant', () => {
-    const { asFragment } = render(
-      <Button variant="destructive">destructive</Button>,
-    );
+    const { asFragment } = render(<Button variant="destructive">destructive</Button>);
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
@@ -50,9 +48,7 @@ describe('variant', () => {
   });
 
   it('should render secondary variant', () => {
-    const { asFragment } = render(
-      <Button variant="secondary">secondary</Button>,
-    );
+    const { asFragment } = render(<Button variant="secondary">secondary</Button>);
 
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>

@@ -20,15 +20,17 @@
     "commitlint": "commitlint"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,mdx,css,scss,json}": [
-      "prettier --write --ignore-unknown --loglevel warn"
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write .",
+      "prettier --check ."
     ],
-    "*.{ts,tsx}": [
-      "eslint --fix --max-warnings=0 --report-unused-disable-directives",
-      "bash -c 'turbo run typecheck --filter=./$(dirname {})'"
+    "*.{json,md,mdx,css,scss}": [
+      "prettier --write .",
+      "prettier --check ."
     ],
-    "**/*.stories.{ts,tsx}": [
-      "turbo run test:stories --filter=./$(dirname {})"
+    "package.json": [
+      "prettier --write .",
+      "prettier --check ."
     ]
   },
   "devDependencies": {

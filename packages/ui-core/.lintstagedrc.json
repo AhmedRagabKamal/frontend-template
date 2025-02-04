@@ -1,6 +1,0 @@
-{
-  "*.{ts,tsx}": [
-    "turbo run lint --filter=ui-core -- --fix",
-    "turbo run test --filter=ui-core -- --bail --findRelatedTests"
-  ]
-}

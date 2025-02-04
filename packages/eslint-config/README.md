@@ -89,7 +89,7 @@ Alternatively, if you prefer a JavaScript config using CommonJS/ESM syntax, ensu
 You can also combine multiple configurations. For example, in a React project, you might want to use both the React and Prettier configurations:
 
 ```javascript
-import { reactConfig, prettierConfig } from '@frontend-template/eslint-config';
+import { prettierConfig, reactConfig } from '@frontend-template/eslint-config';
 
 export default [reactConfig, prettierConfig];
 ```
