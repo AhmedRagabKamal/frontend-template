@@ -1,5 +1,7 @@
-import turboPlugin from 'eslint-plugin-turbo';
 import onlyWarn from 'eslint-plugin-only-warn';
+import turboPlugin from 'eslint-plugin-turbo';
+
+import { GLOB_TS, GLOB_TSX } from '../utils/glob.js';
 
 /**
  * A shared ESLint configuration for the repository.
@@ -10,7 +12,7 @@ export default {
   files: [GLOB_TS, GLOB_TSX],
   plugins: {
     turbo: turboPlugin,
-    onlyWarn,
+    'only-warn': onlyWarn,
   },
   rules: {
     'turbo/no-undeclared-env-vars': 'warn',

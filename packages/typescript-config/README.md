@@ -41,8 +41,8 @@ The foundation configuration that sets up core TypeScript settings:
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "noUncheckedIndexedAccess": true,
     "strict": true,
     "target": "ES2022"
